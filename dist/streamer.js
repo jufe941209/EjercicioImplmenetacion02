@@ -8,4 +8,10 @@ export class Streamer {
     agregarCanal(canales) {
         this.canales.push(canales);
     }
+    mostrarDetalle() {
+        console.log(`Nickname: ${this.nickname}`);
+        console.log(`Descripción: ${this.descripcion}`);
+        console.log(`Redes Sociales: ${this.redesSociales}`);
+        //this.listarStreams()
+    }
 }

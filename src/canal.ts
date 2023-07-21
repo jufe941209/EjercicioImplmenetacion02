@@ -8,19 +8,20 @@ export class Canal{
     nombre:string
     banner:string
     descripcion:string
+    
     plataforma: Plataforma | undefined
-    stremear :Streamer
-    streming:Stream[]
+    streamer :Streamer
+    stremings:Stream[]
 
     constructor(nombre:string, banner:string, descripcion:string, streamer:Streamer){
 
         this.nombre=nombre
         this.banner=banner
         this.descripcion=descripcion
-        this.stremear=streamer
-        this.stremear.agregarCanal(this)
-        this.streming=[]
-
+        this.streamer=streamer
+        streamer.agregarCanal(this)
+        this.stremings=[]
+ 
     }
 
     agregarPlataforma(plataforma:Plataforma){
@@ -28,7 +29,29 @@ export class Canal{
      }
 
      agregarStream(streming:Stream){
-        this.streming.push(streming)
+        this.stremings.push(streming)
     }
   
-}
+    mostrarDetalle(){
+        console.log(`Nombre: ${this.nombre}`)
+        console.log(`Banner: ${this.banner}`)
+        console.log(`Descripción: ${this.descripcion}`)
+        this.listarStreams()
+    }
+
+    mostrarStreamers(){
+        return this.streamer  
+    }
+
+    listarStreams(){
+        console.log("Streams")
+        this.stremings.forEach((stream)=>{
+           console.log(stream   )
+        })
+        
+    }
+
+    }
+
+
+

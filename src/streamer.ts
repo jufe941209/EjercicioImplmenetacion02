@@ -4,6 +4,7 @@ export class Streamer{
     nickname: string
     descripcion: string
     redesSociales: string
+    
     canales:Canal[]
 
     constructor(nickname:string, descripcion:string, redesSociales:string){
@@ -17,5 +18,14 @@ export class Streamer{
 
     agregarCanal(canales:Canal){
         this.canales.push(canales)
+ 
     }
+
+    mostrarDetalle(){
+        console.log(`Nickname: ${this.nickname}`)
+        console.log(`Descripción: ${this.descripcion}`)
+        console.log(`Redes Sociales: ${this.redesSociales}`)
+        //this.listarStreams()
+    }
+
 }

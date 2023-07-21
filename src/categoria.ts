@@ -5,6 +5,7 @@ export class Categoria{
     nombre: string
     descripcion: string
     imagen: string
+    
     streamings:Stream[]
 
 
@@ -17,4 +18,14 @@ export class Categoria{
     agregarStream(stream:Stream){
         this.streamings.push(stream)
     }
+
+    listarStreams(){
+        console.log("Streams")
+        this.streamings.forEach((stream)=>{
+           console.log(stream)
+        })
+        
+    }
+
+
 }

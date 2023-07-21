@@ -4,6 +4,7 @@ import { Categoria } from "./categoria.js"
 export class Stream {
     fecha:Date
     duracion:number
+    
     canal:Canal
     categorias:Categoria[]
 
@@ -12,7 +13,7 @@ export class Stream {
         this.fecha=fecha
         this.duracion=duracion
         this.canal=canal
-        this.canal.agregarStream(this)
+        canal.agregarStream(this)
         this.categorias=[]
     }
 
@@ -21,5 +22,9 @@ export class Stream {
         categoria.agregarStream(this)
     }
 
-
+    mostrarDetalle(){
+        console.log("STREAM")
+        console.log(`Fecha: ${this.fecha}`)
+        console.log(`Duracion: ${this.duracion}`)
+    }
 }

@@ -6,12 +6,18 @@ imagen:string
 descripcion:string
 plataformas: Plataforma[]
 
-constructor(nombre:string, imagen:string, descripcion:string){
+constructor(nombre:string, imagen:string, descripcion:string, plataforma?:Plataforma){
 
     this.nombre=nombre
     this.imagen=imagen
     this.descripcion=descripcion
-    this.plataformas = []
+
+        if(plataforma){
+            this.plataformas=[plataforma]
+            plataforma.agregarAplicacion(this)
+}else {
+    this.plataformas= []
+}
 }
 
 agregarPlataforma(plataforma:Plataforma){
@@ -20,6 +26,11 @@ agregarPlataforma(plataforma:Plataforma){
 
 }
 
-
+listarPlataformas() {
+    console.log("Plataformas")
+    this.plataformas.forEach((plataforma)=>{
+        console.log(plataforma)
+    }) 
+}
 
 }

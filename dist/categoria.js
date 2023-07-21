@@ -8,4 +8,10 @@ export class Categoria {
     agregarStream(stream) {
         this.streamings.push(stream);
     }
+    listarStreams() {
+        console.log("Streams");
+        this.streamings.forEach((stream) => {
+            console.log(stream);
+        });
+    }
 }
